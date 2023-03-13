@@ -2,6 +2,7 @@
 const express = require('express')
 
 // CONFIGURATION
+require('dotenv').config()
 const app = express()
 
 // MIDDLEWARE
@@ -17,8 +18,8 @@ app.get('/', (req,res) => {
 })
 
 // LISTEN
-app.listen(3000, () => {
-    console.log('Listening on port:')
+app.listen(process.env.PORT, () => {
+    console.log('Listening on port:', process.env.PORT)
 })
 
 module.exports = app
